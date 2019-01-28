@@ -1,0 +1,45 @@
+extends layout
+
+block content
+    .body
+        .container
+            nav.navbar
+                a.link(href='')
+                    button.button Registrar Avion
+                a.link(href='')
+                    button.button Modificar Avion
+                a.link(href='')
+                    button.button Eliminar Avion
+                a.link(href='')
+                    button.button Lista de Avion
+                a.link(href='/')
+                    button.button1 Home
+
+            form()
+                .container2
+                    h1.t2 Para Registrar El Avion
+                    .pRegistro.t1 Por favor rellene el formulario para ingresar los datos de los aviones
+                    hr
+
+                    label(for='modelo')
+                        b.t2 Modelo
+                    input.form-control(type='text' placeholder='Ingresar Modelo' name='Modelo' required='' id='Modelo')
+                    label(for='ID')
+                        b.t2 ID
+                    input.form-control(type='text' placeholder='Ingresar ID' name='ID' required='' id='ID')
+                    label(for='estado')
+                        b.t2 Estado
+                    input.form-control(type='text' placeholder='Ingresar estado' name='estado' required='' id='estado')
+
+                    
+            hr
+            button.registerbtn(type='submit' onclick='variables()') Registrar
+
+                script.
+                    function variables(){
+                        var modelo = document.getElementById("modelo").value;
+                        var ID = document.getElementById("ID").value;
+                        var estado = document.getElementById("estado").value;
+                        
+                        seed:generate --name demo-user
+                    }
