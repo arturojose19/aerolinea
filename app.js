@@ -27,6 +27,11 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+app.use((req, res, next) => {
+  req.login = promisify(req.login, req);
+  next();
+});
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
