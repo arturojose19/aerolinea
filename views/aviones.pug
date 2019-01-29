@@ -14,32 +14,24 @@ block content
                     button.button Lista de Avion
                 a.link(href='/')
                     button.button1 Home
-
-            form()
+            
+            form(method="POST" action="/Aviones")
                 .container2
                     h1.t2 Para Registrar El Avion
                     .pRegistro.t1 Por favor rellene el formulario para ingresar los datos de los aviones
                     hr
-
-                    label(for='modelo')
+                    .form-group
+                        label(for='Modelo')
                         b.t2 Modelo
-                    input.form-control(type='text' placeholder='Ingresar Modelo' name='Modelo' required='' id='Modelo')
-                    label(for='ID')
+                        input(type='text' aria-describedby='modelo' placeholder='Ingresar Modelo' name='Modelo' required='' id='Modelo')
+                    .form-group
+                        label(for='ID')
                         b.t2 ID
-                    input.form-control(type='text' placeholder='Ingresar ID' name='ID' required='' id='ID')
-                    label(for='estado')
+                        input(type='number' aria-describedby='id' placeholder='Ingresar ID' name='ID' required='' id='ID')
+                    .form-group
+                        label(for='Estado')
                         b.t2 Estado
-                    input.form-control(type='text' placeholder='Ingresar estado' name='estado' required='' id='estado')
+                        input(type='text' aria-describedby='estado' placeholder='Ingresar estado' name='Estado' required='' id='Estado')
+                    button.registerbtn(type='submit') Registrar
 
                     
-            hr
-            button.registerbtn(type='submit' onclick='variables()') Registrar
-
-                script.
-                    function variables(){
-                        var modelo = document.getElementById("modelo").value;
-                        var ID = document.getElementById("ID").value;
-                        var estado = document.getElementById("estado").value;
-                        
-                        seed:generate --name demo-user
-                    }

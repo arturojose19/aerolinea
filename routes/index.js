@@ -6,10 +6,16 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-
+const avionesController = require('../controller/controllerAvion');
 
 router.get('/aviones', function(req, res, next){
   res.render('aviones');
+});
+
+router.post('/Aviones', (req,res) => {
+  console.log(req.body);
+  avionesController.createAvion(req.body)
+  res.redirect('/aviones');
 });
 
 router.get('/caracteristicas_Del_Avion', function(req, res, next){
