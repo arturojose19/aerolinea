@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    .body
+        .container
+            nav.navbar
+                a.link(href='/registroAviones')
+                    button.button Registrar Avion
+                a.link(href='/updateAvion')
+                    button.button Modificar Avion
+                a.link(href='/listaAvion')
+                    button.button Eliminar Avion
+                a.link(href='/listaAvion')
+                    button.button Lista de Avion
+                a.link(href='/')
+                    button.button1 Home
+
+                    table.table.bg-white
+                                thead
+                                    tr 
+                                        th(scope='col') ID Avion
+                                        th(scope='col') Modelo
+                                        th(scope='col') Estado
+                                        
+                                tbody
+                                - for (var i = 0; i < aviones.length; i++)
+                                  tr
+                                    th(scope='row') #{aviones[i].ID}
+                                    td #{aviones[i].Modelo}
+                                    td #{aviones[i].Estado}
+                                    
+                                    td
+                                        form(action=`eliminarAvion/${aviones[i].ID}`,method="POST")
+                                            button.btn.btn-outline-danger(type='submit') Eliminar
+                                    

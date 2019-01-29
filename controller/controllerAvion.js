@@ -24,6 +24,36 @@ controller.createAvion = async function (data) {
 
 };
 
+controller.deleteAvion = async function (ID, callback) {
+    try {
+        let response = await avion.destroy(
+         {
+            where: {
+                ID
+            }
+        });
+        callback(null);
+    } catch (error) {
+        callback(error);
+    }
+};
+
+controller.updateAvion = async function (data, callback) {
+    try {
+        let response = await avion.update( {
+            Estado:data.Estado,
+            Modelo:data.Modelo
+        },
+         {
+            where: {
+                ID:data.ID
+            }
+        });
+        callback(null);
+    } catch (error) {
+        callback(error);
+    }
+}
 
 
 module.exports = controller;

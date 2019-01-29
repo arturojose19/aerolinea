@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    .body
+        .container
+            nav.navbar
+                a.link(href='/registroAviones')
+                    button.button Registrar Avion
+                a.link(href='/updateAvion')
+                    button.button Modificar Avion
+                a.link(href='/listaAvion')
+                    button.button Eliminar Avion
+                a.link(href='/listaAvion')
+                    button.button Lista de Avion
+                a.link(href='/')
+                    button.button1 Home
+            
+            
+                form(method="POST" action="/Aviones")
+                    .container2
+                        h1.t2 Para Registrar El Avion
+                        .pRegistro.t1 Por favor rellene el formulario para ingresar los datos de los aviones
+                        hr
+                        .form-group
+                            label(for='Modelo')
+                            b.t2 Modelo
+                            input(type='text' aria-describedby='modelo' placeholder='Ingresar Modelo' name='Modelo' required='' id='Modelo')
+                        .form-group
+                            label(for='ID')
+                            b.t2 ID
+                            input(type='number' aria-describedby='id' placeholder='Ingresar ID' name='ID' required='' id='ID')
+                        .form-group
+                            label(for='Estado')
+                            b.t2 Estado
+                            input(type='text' aria-describedby='estado' placeholder='Ingresar estado' name='Estado' required='' id='Estado')
+                        button.registerbtn(type='submit') Registrar

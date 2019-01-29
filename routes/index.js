@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Guacamaya' });
 });
 
 const avionesController = require('../controller/controllerAvion');
@@ -18,12 +18,51 @@ router.post('/Aviones', (req,res) => {
   res.redirect('/aviones');
 });
 
-router.get('/caracteristicas_Del_Avion', function(req, res, next){
-  res.render('caracteristicas_Del_Avion');
-});
 
 router.get('/', function(req, res, next){
   res.render('index');
 });
+
+router.get('/registroAviones', function(req, res, next) {
+  res.render('registroAviones');
+});
+
+router.get('/listaAvion', (req, res) => {
+  avionesController.getAviones(data => res.render('listaAvion', {aviones: data}))
+});
+
+router.post("/eliminarAvion/:ID", (req, res) => {
+  if (!!req.params.ID) {
+    avionesController.deleteAvion(req.params.ID, (err) => {
+      if (err)
+        res.json({
+          success: false,
+          msg: 'Failed to delete product'
+        });
+      else
+        res.redirect('/listaAvion');
+    });
+  }
+});
+
+router.get('/updateAvion', function(req, res, next) {
+  res.render('updateAvion');
+});
+
+router.post("/actualizarAvion", (req, res) => {
+  let aviones = avionesController.getAviones();
+    console.log("Entra");
+    avionesController.updateAvion({ID: req.body.ID, Estado: req.body.Estado, Modelo: req.body.Modelo}, (err) => {
+      if (err)
+        res.json({
+          success: false,
+          msg: 'Failed to update product'
+        });
+      else
+        res.redirect('/listaAvion');
+    });
+  }
+);
+
 
 module.exports = router;
