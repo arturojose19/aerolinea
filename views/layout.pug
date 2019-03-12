@@ -3,5 +3,54 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
   body
-    block content
+    block header
+      nav.header
+        .header-logo
+          img(src='../img/logo.jpg' width="300px"  height="85px")
+        ul.header-navbar
+          li.header-navbar_list
+            span(href='#') Vuelos
+            ul.header-navbar_sublist
+              li
+                a(href='rutas') Rutas
+              li Itinerario
+              li Vuelos Charter
+              li Manifiestos
+          li.header-navbar_list 
+            span(href='#') Usuarios
+            ul.header-navbar_sublist
+              li 
+                a(href="boletos") Boletos
+              li Lista de Espera
+              li Asientos
+              li Tripulacion
+          li.header-navbar_list 
+            span(href='#') Aviones
+            ul.header-navbar_sublist
+              li Registro
+              li Mantenimiento
+              li Gestion
+          li.header-navbar_list
+            span(href='#') Reportes
+
+    block body
+
+    block footer
+      .footer
+        .footer-left
+          h6 UNIMET
+          h6 AIRBRAIN+
+        .footer-center
+          h6 Copyright © 2019 Aerolineas Guacamaya. All rights reserved.
+        .footer-right
+          img(src="../img/twitter.png",width="40vw", height="40vh")
+          img(src="../img/instagram.jpg",width="50vw", height="50vh")
+          img(src="../img/facebook.png",width="40vw", height="40vh")
+          h6.footer-container__imgtext Síguenos en @AerolineasGuacamaya
+
+    block script
+      script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js", defer)
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js", defer)
+      script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js", defer)

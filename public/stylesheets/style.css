@@ -1,73 +1,138 @@
-body {background: url(http://1.bp.blogspot.com/-dOJJ6RqpLsM/VQlQFTWbY9I/AAAAAAAAQ-w/ybsFdFNhSrk/s1600/avion-al-atardecer-viaja-bonito-02.jpg) no-repeat center fixed;
-background-size:cover;
-margin:0;
-padding:0;}
-
-p {color: white;font-family: Arial, Helvetica, sans-serif;}
-center {align-content: center;margin:0;padding:0;}
-footer { position: fixed;  left: 0;  bottom: 0;  right:0;  width: 100%;  height: 1vh;  font-size: 1.3vw;  background-color: red; color: white;  text-align: center;  display: table;  vertical-align: bottom;  padding: 0px;  margin:0;}
-html{margin:0;padding:0;}
-img{justify-content: center;  align-items: center;  display: flex;}
-header{justify-content: center;  align-items: center;  display: flex;}
-.navbar2{color: black;font-family: Arial, Helvetica, sans-serif; }
-a{color: white;font-family: Arial, Helvetica, sans-serif;font-size: 45%;text-decoration: none;}
-.navbar{font-size: 3vw; display:flex; justify-content: center; align-items: center; margin:0; padding:0; width:100%}
-.brand-title{font-size:3.5vh;position: fixed; top:47.5vh;}
-.container-fluid{align-content: center; justify-content: center;}
-.brand-title{font-style: italic;font-family:helvetica;font-size:3.5vh;position: fixed; top:47.5vh;}
-.t1{font-style: italic;font-family:helvetica;}
-.t2{font-family:helvetica;}
-.container2{align-content: center; justify-content: center; padding: 16px;}
-
-h1{
-  color: white;font-family: Arial, Helvetica, sans-serif;
+/*Letras*/
+@font-face{
+  font-family: 'Caviar';
+  src: url('../font/CaviarDreams_BoldItalic.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
+/*Letras*/
 
-/* Formulario */
-input{
+/*Header*/
+.header {
+  display: flex;
   width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
+  padding: 0 10px;
+  height: 100px;
+}
+.header-logo{
+  flex: 1 1 300px;
+  padding: 20px;
 }
 
-input:focus {
-  background-color: #ddd;
-  outline: none;
+.header-logo img{
+  max-width: 300px;
 }
 
-/* Linea del formulario */
-hr {
-  border: 1px solid black;
-  margin-bottom: 25px;
+.header-navbar{
+  font-family: 'Caviar';
+  color: rgb(8,35 ,85);
+  flex: 1;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin: 0 10% 0;
+  padding: 0;
 }
 
-/* Boton de registro */
-.registerbtn {
-  background-color:rgb(202, 1, 175);
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
+ul.header-navbar li.header-navbar_list {
+  list-style: none;
+  margin: 0 10px;
+  padding: 4px;
+  position: relative;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  font-size: 19px;
   cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  border-radius: 10px;
+  text-shadow: 2px 2px rgb(8, 151, 247);
 }
 
-.registerbtn:hover{
+ul.header-navbar li.header-navbar_list:hover ul.header-navbar_sublist{
   opacity: 1;
+  visibility: visible;
+  top:70px;
+  width: 300px;
 }
 
-/* Add a blue text color to links */
-a {
-  color: dodgerblue;
+ul.header-navbar li.header-navbar_list ul.header-navbar_sublist {
+  padding: 0;
+  position: absolute;
+  top:-100px;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s;
 }
 
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-background-color:white;
-text-align: center;
+ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
+  list-style: none;
+  padding: 0;
+  margin: 0 ;
+  line-height: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  text-shadow: none;
 }
+/*Fin Header*/
+
+/*Body*/
+.body-bg{
+  background-image: url('../img/img1\ \(3\).jpg');
+  background-size: cover;
+  width: 100%;
+  height: calc(85vh - 50px);
+}
+
+/*Carrusel*/
+.align-carrusel{
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+.content{
+  display: grid;
+  width: 35%;
+  height: 55%;
+  background-color: rgb(8,35 ,85);
+  margin: 6% 2%;
+  border-radius: 23%;
+  box-shadow: 0px 0px 30px 0px black;
+  padding: 1.5%;
+  text-shadow: 1px 2px #000000;
+}
+/*Fin Carrusel*/
+/*Fin body*/
+
+
+/*Footer*/
+.footer{
+  font-family: 'Caviar';
+  color: white;
+  height: 100px;
+  width: 100%;
+  background-color: rgb(10, 30, 75);
+  padding: 0;
+  margin: 0;
+  bottom: 50%;
+  box-shadow: 1px 1px 20px 3px rgb(8, 35, 85) ;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer-left {
+  flex: 33.33%;
+  text-align: center;
+}
+
+.footer-center {
+  flex: 33.33%;
+  text-align: center;
+}
+
+.footer-right{
+  flex: 33.33%;
+  text-align: center;
+}
+/*Fin Footer*/
