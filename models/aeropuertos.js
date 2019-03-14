@@ -1,36 +1,27 @@
 const sequelize = require('sequelize');
 const dataBase = require('../config/dataBase');
 
-const aviones = dataBase.define('aviones', {
-    
-    ID: {
-        type: sequelize.INTEGER,
+const aeropuertos = dataBase.define('aeropuertos', {
+    IATA: {
+        type: sequelize.STRING(3),
         allowNull: false,
         primaryKey: true,
         unique: true,
-        autoIncrement: true,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
-    },
-    
-    Modelo: {
-        type: sequelize.STRING(255),
-        allowNull: false,
-
         validate: {
             isAlpha: true,
             notEmpty: true
         }
     },
-    
-    
-    Estado: {
+
+    ciudad: {
         type: sequelize.STRING(255),
         allowNull: false,
-        
+        references:{
+            model: ciudades,
+            key: 'ciudad'
+        },
         validate: {
+            
             isAlpha: true,
             notEmpty: true
         }
@@ -40,5 +31,4 @@ const aviones = dataBase.define('aviones', {
     timestamps: false,
     freezeTableName: true
 });
-
-module.exports = aviones;
+module.exports = aeropuertos;

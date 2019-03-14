@@ -1,35 +1,21 @@
 const sequelize = require('sequelize');
 const dataBase = require('../config/dataBase');
 
-const aviones = dataBase.define('aviones', {
-    
-    ID: {
+const avionProveedor = dataBase.define('avionProveedor', {
+    idAvion: {
         type: sequelize.INTEGER,
         allowNull: false,
         primaryKey: true,
         unique: true,
-        autoIncrement: true,
         validate: {
             isNumeric: true,
             notEmpty: true
         }
     },
     
-    Modelo: {
+    codigo: {
         type: sequelize.STRING(255),
         allowNull: false,
-
-        validate: {
-            isAlpha: true,
-            notEmpty: true
-        }
-    },
-    
-    
-    Estado: {
-        type: sequelize.STRING(255),
-        allowNull: false,
-        
         validate: {
             isAlpha: true,
             notEmpty: true
@@ -41,4 +27,4 @@ const aviones = dataBase.define('aviones', {
     freezeTableName: true
 });
 
-module.exports = aviones;
+module.exports = avionProveedor;
