@@ -29,16 +29,8 @@ const facturas = dataBase.define('facturas', {
             isAlpha: true,
             notEmpty: true
         }
-    },
-
-    documentoComprador: {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
     }
+    
 }, {
     timestamps: false,
     freezeTableName: true

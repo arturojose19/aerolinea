@@ -13,16 +13,6 @@ const aeropuertos = dataBase.define('aeropuertos', {
         }
     },
 
-    ciudad: {
-        type: sequelize.STRING(255),
-        allowNull: false,
-        validate: {
-            
-            isAlpha: true,
-            notEmpty: true
-        }
-    }
-
 }, {
     timestamps: false,
     freezeTableName: true
