@@ -1,30 +1,31 @@
 const sequelize = require('sequelize');
 const dataBase = require('../config/dataBase');
 
-const aeropuertos = dataBase.define('aeropuertos', {
-    IATA: {
-        type: sequelize.STRING(3),
+const tripulado = dataBase.define('tripulado', {
+    idVuelo: {
+        type: sequelize.INTEGER,
         allowNull: false,
-        primaryKey: true,
-        unique: true,
+        primaryKey:true,
         validate: {
-            isAlpha: true,
+            isNumeric: true,
             notEmpty: true
         }
     },
-
-    ciudad: {
-        type: sequelize.STRING(255),
+    
+    idEmpleado: {
+        type: sequelize.INTEGER,
         allowNull: false,
+        primaryKey:true,
         validate: {
-            
-            isAlpha: true,
+            isNumeric: true,
             notEmpty: true
         }
     }
+    
 
 }, {
     timestamps: false,
     freezeTableName: true
 });
-module.exports = aeropuertos;
+
+module.exports = tripulado;

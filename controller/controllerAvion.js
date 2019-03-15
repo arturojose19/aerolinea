@@ -1,18 +1,28 @@
 const sequelize = require('sequelize');
 sequelize.Promise = global.Promise
 const dataBase = require('../config/dataBase');
-const avion = require('../models/aviones');
+const avion = require('../models/associations/avionesAssociations');
+const caracteristicasAviones = require('../models/caracteristicasAviones');
 
 const controller = {};
 
 controller.getAviones = async function (callback) {
+    dataBase.sync();
     try {
         let response = await avion.findAll({
+            include:[{
+                model: caracteristicasAviones,
+                as: 'caracteristicasAviones',
+                where: {tv: true},
+                required: true
+            }]
         });
         let aviones = response.map(result => result.dataValues);
         console.log(aviones);
         callback(aviones, null);
     } catch (error) {
+        console.log('se va pal catch');
+        console.log(error);
         callback(null, error);
     }
 }
