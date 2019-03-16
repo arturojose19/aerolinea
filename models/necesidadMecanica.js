@@ -2,20 +2,10 @@ const sequelize = require('sequelize');
 const dataBase = require('../config/dataBase');
 
 const necesidadMecanica = dataBase.define('necesidadMecanica', {
-    ID: {
+    idAvion: {
         type: sequelize.INTEGER,
         allowNull: false,
         primaryKey: true,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
-    },
-    
-    codigoMantenimiento: {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        primaryKey:true,
         validate: {
             isNumeric: true,
             notEmpty: true

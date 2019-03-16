@@ -1,10 +1,10 @@
-const empleados = require('../empleados');
+const pasajeros = require('../pasajeros');
 const personas = require('../personas');
 
-empleados.belongsTo(personas, {
+pasajeros.belongsTo(personas, {
     as:'documento',
     foreignKey: 'documento', 
     targetKey: 'documento'
 });
 
-module.exports=empleados;
+module.exports=pasajeros;

@@ -14,24 +14,6 @@ const vuelos = dataBase.define('vuelos', {
             notEmpty: true
         }
     },
-
-    codigoRuta: {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
-    },
-
-    idAvion: {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
-    },
     
     estado: {
         type: sequelize.STRING(255),

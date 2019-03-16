@@ -13,15 +13,6 @@ const pistas = dataBase.define('pistas', {
             notEmpty: true
         }
     },
-    
-    aeropuertoIATA: {
-        type: sequelize.STRING(3),
-        allowNull: false,
-        validate: {
-            isAlpha: true,
-            notEmpty: true
-        }
-    },
 
     distanciaPista: {
         type: sequelize.DOUBLE,

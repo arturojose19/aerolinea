@@ -13,15 +13,6 @@ const pasajes = dataBase.define('pasajes', {
             notEmpty: true
         }
     },
-    
-    idFactura: {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
-    },
 
     asiento: {
         type: sequelize.INTEGER,
@@ -37,24 +28,6 @@ const pasajes = dataBase.define('pasajes', {
         allowNull: false,
         validate: {
             isAlpha: true,
-            notEmpty: true
-        }
-    },
-
-    documentoPasajero: {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
-    },
-
-    idItinerario: {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-            isNumeric: true,
             notEmpty: true
         }
     }

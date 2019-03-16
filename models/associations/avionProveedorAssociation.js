@@ -5,11 +5,11 @@ const avionProveedor = require('../avionProveedor');
 avionProveedor.belongsTo(aviones, {
     as: 'idAvion',
     foreignKey: 'idAvion', targetKey: 'id',
-})
+});
 
 avionProveedor.belongsTo(proveedores, {
     as: 'codigoProveedor',
     foreignKey: 'codigoProveedor', targetKey: 'codigoProveedor'
-})
+});
 
 module.exports=avionProveedor;

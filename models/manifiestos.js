@@ -11,26 +11,8 @@ const manifiestos = dataBase.define('manifiestos', {
             isNumeric: true,
             notEmpty: true
         }
-    },
-    
-    idVuelo: {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
-    },
-
-    codigoManifiesto: {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
     }
-
+    
 }, {
     timestamps: false,
     freezeTableName: true

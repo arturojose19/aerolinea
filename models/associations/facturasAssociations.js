@@ -5,6 +5,6 @@ facturas.belongsTo(personas, {
     as: 'documentoComprador',
     foreignKey: 'documentoComprador',
     targetKey: 'documento'
-})
+});
 
 module.exports=facturas;

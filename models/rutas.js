@@ -15,24 +15,6 @@ const rutas = dataBase.define('rutas', {
         }
     },
     
-    numeroPistaOrigen: {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
-    },
-
-    numeroPistaDestino: {
-        type: sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-            isNumeric: true,
-            notEmpty: true
-        }
-    },
-    
 
     precioBase: {
         type: sequelize.FLOAT,
