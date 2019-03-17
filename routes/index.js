@@ -9,13 +9,13 @@ router.get('/', function(req, res, next) {
 const avionesController = require('../controller/controllerAvion');
 
 router.get('/aviones', function(req, res, next){
-  res.render('aviones');
+  avionesController.getAviones(data => res.render('aviones', {aviones: data}))
 });
 
-router.post('/Aviones', (req,res) => {
-  console.log(req.body);
-  avionesController.createAvion(req.body)
-  res.redirect('/aviones');
+router.get('/Aviones', (req,res) => {
+   console.log(req.body);
+   avionesController.createAvion(req.body)
+   res.redirect('/aviones');
 });
 
 

@@ -136,3 +136,29 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
   text-align: center;
 }
 /*Fin Footer*/
+
+/*tablas*/
+.table-container{
+  max-height: 420px;
+  overflow: scroll;
+  width: 100%;
+}
+
+.thead{
+  background-color: rgb(10, 30, 75);
+  color: white;
+}
+/*Cierra Tablas*/
+
+/*Botones*/
+.bottom{
+  margin: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bottom-row{
+  padding: 10px 70px ;
+}
+/*Cierra Botones*/

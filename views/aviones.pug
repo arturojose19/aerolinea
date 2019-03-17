@@ -4,16 +4,45 @@ block content
     .body.body-bg
         .container
             nav.navbar
-                a.link(href='/registroAviones')
-                    button.button Registrar Avion
-                a.link(href='/updateAvion')
-                    button.button Modificar Avion
-                a.link(href='/listaAvion')
-                    button.button Eliminar Avion
-                a.link(href='/listaAvion')
-                    button.button Lista de Avion
-                a.link(href='/')
-                    button.button1 Home
-
+                .table-container
+                    table.table.bg-white.table-striped
+                        thead.thead
+                            tr 
+                                th(scope='col') ID Avion
+                                th(scope='col') Modelo
+                                th(scope='col') Estado
+                                th(scope='col')
+                                th(scope='col')
+                                
+                        tbody
+                        - for (var i = 0; i < aviones.length; i++)
+                            tr
+                                th #{aviones[i].ID}
+                                td #{aviones[i].Modelo}
+                                td #{aviones[i].Estado}
+                                td
+                                    form(action=`eliminarAvion/${aviones[i].ID}`,method="POST")
+                                        button.btn.btn-outline-danger(type='submit') Eliminar
+                                td
+                                    form(action=`eliminarAvion/${aviones[i].ID}`,method="POST")
+                                        button.btn.btn-outline-danger(type='submit') Modificar
+                .bottom
+                    a.bottom-row
+                        button.button(data-toggle="modal" data-target="#registrar") Registrar Avion
+                        #registrar.modal.fade(tabindex='-1', role='dialog', aria-labelledby='registrar', aria-hidden='true')
+                            .modal-dialog.modal-dialog-scrollable(role='document')
+                                .modal-content
+                                    .modal-header
+                                        h5#registrar.modal-title Modal title
+                                        button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                        span(aria-hidden='true') ×
+                                    .modal-body
+                                        | ...
+                                    .modal-footer
+                                        button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                                    button.btn.btn-primary(type='button') Save changes
+                    a.bottom-row.link(href='/updateAvion')
+                        button.button Modificar Avion
+                                
             
                     
