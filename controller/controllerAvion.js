@@ -13,7 +13,6 @@ controller.getAviones = async function (callback) {
             include:[{
                 model: caracteristicasAviones,
                 as: 'caracteristicasAviones',
-                where: {tv: true},
                 required: true
             }]
         });
@@ -29,7 +28,7 @@ controller.getAviones = async function (callback) {
 
 controller.createAvion = async function (data) {
     
-    console.log(data.ID, data.Modelo, data.Estado, 7);
+    console.log(data.ID, data.modelo, data.Estado, 7);
     avion.create(data);
 
 };
@@ -52,7 +51,7 @@ controller.updateAvion = async function (data, callback) {
     try {
         let response = await avion.update( {
             Estado:data.Estado,
-            Modelo:data.Modelo
+            modelo:data.modelo
         },
          {
             where: {

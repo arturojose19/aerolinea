@@ -13,6 +13,7 @@ router.get('/aviones', function(req, res, next){
 });
 
 router.get('/Aviones', (req,res) => {
+  console.log("hola")
    console.log(req.body);
    avionesController.createAvion(req.body)
    res.redirect('/aviones');
