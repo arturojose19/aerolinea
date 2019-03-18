@@ -12,13 +12,12 @@ router.get('/aviones', function(req, res, next){
   avionesController.getAviones(data => res.render('aviones', {aviones: data}))
 });
 
-router.get('/Aviones', (req,res) => {
+router.post('/Aviones', (req,res) => {
   console.log("hola")
    console.log(req.body);
    avionesController.createAvion(req.body)
    res.redirect('/aviones');
 });
-
 
 router.get('/', function(req, res, next){
   res.render('index');
@@ -41,7 +40,7 @@ router.post("/eliminarAvion/:ID", (req, res) => {
           msg: 'Failed to delete product'
         });
       else
-        res.redirect('/listaAvion');
+        res.redirect('/aviones');
     });
   }
 });
@@ -53,14 +52,14 @@ router.get('/updateAvion', function(req, res, next) {
 router.post("/actualizarAvion", (req, res) => {
   let aviones = avionesController.getAviones();
     console.log("Entra");
-    avionesController.updateAvion({ID: req.body.ID, Estado: req.body.Estado, Modelo: req.body.Modelo}, (err) => {
+    avionesController.updateAvion({ID: req.body.ID, Estado: req.body.Estado, modelo: req.body.modelo}, (err) => {
       if (err)
         res.json({
           success: false,
           msg: 'Failed to update product'
         });
       else
-        res.redirect('/listaAvion');
+        res.redirect('/aviones');
     });
   }
 );

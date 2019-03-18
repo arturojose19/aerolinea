@@ -19,7 +19,6 @@ const aviones = dataBase.define('aviones', {
         type: sequelize.STRING(255),
         allowNull: false,
         validate: {
-            isAlpha: true,
             notEmpty: true
         }
     }

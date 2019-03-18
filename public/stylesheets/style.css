@@ -25,13 +25,14 @@
 
 .header-navbar{
   font-family: 'Caviar';
-  color: rgb(8,35 ,85);
+  color: rgb(20, 100, 248);
   flex: 1;
   display: flex;
   width: 100%;
   justify-content: flex-end;
   margin: 0 10% 0;
   padding: 0;
+  z-index: 3;
 }
 
 ul.header-navbar li.header-navbar_list {
@@ -44,7 +45,8 @@ ul.header-navbar li.header-navbar_list {
   align-items: center;
   font-size: 19px;
   cursor: pointer;
-  text-shadow: 2px 2px rgb(8, 151, 247);
+  text-shadow: 2px 2px rgb(43, 7, 112);
+  z-index: 3;
 }
 
 ul.header-navbar li.header-navbar_list:hover ul.header-navbar_sublist{
@@ -52,6 +54,7 @@ ul.header-navbar li.header-navbar_list:hover ul.header-navbar_sublist{
   visibility: visible;
   top:70px;
   width: 300px;
+  z-index: 3;
 }
 
 ul.header-navbar li.header-navbar_list ul.header-navbar_sublist {
@@ -62,6 +65,7 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist {
   opacity: 0;
   visibility: hidden;
   transition: 1s;
+  z-index: 3;
 }
 
 ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
@@ -72,6 +76,7 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
   cursor: pointer;
   font-size: 15px;
   text-shadow: none;
+  z-index: 3;
 }
 /*Fin Header*/
 
@@ -145,7 +150,7 @@ ul.header-navbar li.header-navbar_list ul.header-navbar_sublist li{
 }
 
 .thead{
-  background-color: rgb(10, 30, 75);
+  background-color: rgb(16, 10, 75);
   color: white;
 }
 /*Cierra Tablas*/
